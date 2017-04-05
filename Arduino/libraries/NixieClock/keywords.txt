@@ -1,0 +1,28 @@
+#######################################
+# Syntax Coloring Map For NixieClock
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+NixieClock			KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin				KEYWORD2
+power_on			KEYWORD2
+power_off			KEYWORD2
+update				KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+HMS				LITERAL1
+dmy				LITERAL1
+HM				LITERAL1
+dm				LITERAL1
+Y				LITERAL1
