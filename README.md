@@ -41,4 +41,20 @@ This clock is an implementation with 4 ИН-1 Nixie tubes.
 
 
 ## Prototype with 6 ИН-12А Nixie tubes
-![Prototype ИН-12А Nixie clock](./pic/P1010278_s.jpg "6x ИН-12А tube type")
+![Prototype ИН-12А Nixie clock](./pic/P1010278_s.jpg "6x ИН-12А tube
+type")
+
+# Hardware Description
+![Beware of electric shock!](./pic/High_Voltage.jpg "Beware of
+electric shock!")
+
+**Beware of electric shock!**
+
+**Beware of electrical safety hazards!**
+
+**The Nixie tubes are fired at approx 200 Volt! There is definitely a
+danger of hazardous voltage given! Never think of working on the Nixie
+hardware when you are not educated in doing work with hazardous
+voltages!**
+
+The hardware description is given in EAGLE format and a PDF-file.
