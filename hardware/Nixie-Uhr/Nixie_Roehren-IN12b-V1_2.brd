@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.6.0">
+<eagle version="7.7.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -26,7 +26,7 @@
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
@@ -112,7 +112,7 @@
 <dimension x1="53.34" y1="29.75" x2="0" y2="51.6" x3="26.67" y3="54.45" textsize="1.778" layer="47" dtype="horizontal"/>
 <dimension x1="68.58" y1="28.48" x2="0" y2="57.35" x3="34.29" y3="57.6" textsize="1.778" layer="47" dtype="horizontal"/>
 <dimension x1="90.17" y1="28.48" x2="0" y2="60.7" x3="45.085" y3="60.7" textsize="1.778" layer="47" dtype="horizontal"/>
-<dimension x1="105.41" y1="32.25" x2="0" y2="59.95" x3="52.705" y3="63.7" textsize="1.778" layer="47" dtype="horizontal"/>
+<dimension x1="105.41" y1="29.75" x2="0" y2="59.95" x3="52.705" y3="63.7" textsize="1.778" layer="47" dtype="horizontal"/>
 <dimension x1="120.65" y1="28.48" x2="0" y2="66.6" x3="60.325" y3="66.75" textsize="1.778" layer="47" dtype="horizontal"/>
 <dimension x1="142.24" y1="28.48" x2="0" y2="70.05" x3="71.12" y3="69.9" textsize="1.778" layer="47" dtype="horizontal"/>
 <dimension x1="3" y1="3" x2="0" y2="0" x3="1.5" y3="0" textsize="1.778" layer="47" dtype="horizontal"/>
@@ -136,8 +136,8 @@
 <text x="125.73" y="1.905" size="1.778" layer="16" font="vector" ratio="12" rot="MR0">1</text>
 <text x="148.59" y="1.905" size="1.778" layer="16" font="vector" ratio="12" rot="MR0">1</text>
 <dimension x1="0" y1="0" x2="20.32" y2="5.62" x3="-1" y3="2.81" textsize="1.778" layer="47" dtype="vertical"/>
-<dimension x1="0" y1="0" x2="53.34" y2="32.25" x3="-15.1" y3="16.125" textsize="1.778" textratio="12" layer="47" dtype="vertical"/>
 <dimension x1="0" y1="0" x2="53.34" y2="22.13" x3="-8.8" y3="11.065" textsize="1.778" textratio="12" layer="47" dtype="vertical"/>
+<dimension x1="0" y1="0" x2="53.34" y2="32.25" x3="-15" y3="16.125" textsize="1.778" layer="47" dtype="vertical"/>
 </plain>
 <libraries>
 <library name="con-harting-ml">
@@ -1609,10 +1609,10 @@ Covered vias can be set in Masks (Limit).
 <element name="R4" library="rcl" package="0207/10" value="27k" x="78.74" y="41.18" rot="R90"/>
 <element name="R5" library="rcl" package="0207/10" value="27k" x="50.8" y="41.18" rot="R90"/>
 <element name="R6" library="rcl" package="0207/10" value="27k" x="26.67" y="41.18" rot="R90"/>
-<element name="R7" library="rcl" package="0207/10" value="56k" x="105.41" y="41.18" rot="R90"/>
-<element name="R8" library="rcl" package="0207/10" value="56k" x="107.95" y="41.18" rot="R90"/>
-<element name="R9" library="rcl" package="0207/10" value="56k" x="53.34" y="41.18" rot="R90"/>
-<element name="R10" library="rcl" package="0207/10" value="56k" x="55.88" y="41.18" rot="R90"/>
+<element name="R7" library="rcl" package="0207/10" value="220k" x="105.41" y="41.18" rot="R90"/>
+<element name="R8" library="rcl" package="0207/10" value="220k" x="107.95" y="41.18" rot="R90"/>
+<element name="R9" library="rcl" package="0207/10" value="220k" x="53.34" y="41.18" rot="R90"/>
+<element name="R10" library="rcl" package="0207/10" value="220k" x="55.88" y="41.18" rot="R90"/>
 <element name="N1" library="russian-nixies" package="IN-12" value="IN-12B" x="38.1" y="28.48"/>
 <element name="N2" library="russian-nixies" package="IN-12" value="IN-12B" x="16.51" y="28.48"/>
 <element name="N3" library="russian-nixies" package="IN-12" value="IN-12B" x="68.58" y="28.48"/>
@@ -2391,9 +2391,9 @@ Covered vias can be set in Masks (Limit).
 <wire x1="47.625" y1="19.2725" x2="52.07" y2="14.8275" width="0.4064" layer="1"/>
 <wire x1="52.07" y1="14.8275" x2="105.283" y2="14.8275" width="0.4064" layer="1"/>
 <via x="105.283" y="14.8275" extent="1-16" drill="0.6" diameter="1.27"/>
-<wire x1="103.8225" y1="29.3925" x2="103.8225" y2="16.288" width="0.4064" layer="16"/>
+<wire x1="105.41" y1="30.98" x2="103.8225" y2="26.8925" width="0.4064" layer="16"/>
+<wire x1="103.8225" y1="26.8925" x2="103.8225" y2="16.288" width="0.4064" layer="16"/>
 <wire x1="105.283" y1="14.8275" x2="103.8225" y2="16.288" width="0.4064" layer="16"/>
-<wire x1="103.8225" y1="29.3925" x2="105.41" y2="30.98" width="0.4064" layer="16"/>
 </signal>
 <signal name="DP1">
 <contactref element="SV1" pad="8"/>
