@@ -31,9 +31,14 @@ static bool wifi_setup(void);
 static void print_wifi_mac_address(void);
 static void print_wifi_status(void);
 
-//WiFi stuff
-static constexpr char _SSID[] = "your_ssid";  //network SSID (name)
-static constexpr char _PASS[] = "your_password";  //network password
+//WiFiManager
+WiFiManager _wifimanager;
+//Login for OTA Update option, (already entered login is saved)
+const char *ota_user = "admin";
+const char *ota_pass = "admin";
+char resChar = n; 
+
+//UDP
 static WiFiUDP _udp;
 static const unsigned int UDP_LOCAL_PORT = 2390; //local port to listen for UDP packets
 
@@ -75,11 +80,24 @@ void setup()
   _clock.begin(PCF8574_TWI_TYPE, true, true);
   //**** STOP ****
 
+
+  /* Is handled by WifiManager
   // Try to start wifi interface
   if ( (wifi_setup() == true) && (_udp.begin(UDP_LOCAL_PORT) == true) ) {
     Serial.print("Created UDP local port ");
     Serial.println(_udp.localPort());
   }
+*/
+_wifimanager.setOtaUser(ota_user, ota_pass); 
+if(_wifimanager.autoConnect("NixieClock")==false){ //TODO Add Backup method by failue 
+  Serial.println("Problem with WifiManager init");
+  return 0;
+}
+
+if(_udp.begin(UDP_LOCAL_PORT)==true){
+  Serial.print("Created UDP local port ");
+  Serial.println(_udp.localPort());
+}
 
   // Try to start time syncing mechanisms
   Serial.println("Using localtime zone 'Berlin', CEST, CET");
@@ -105,6 +123,7 @@ void loop()
       _clock.update(NixieClock::dmy, local_time);
     }
   }
+  uart_debug();
 }
 
 // **********************************************
@@ -306,6 +325,28 @@ static void print_wifi_status(void)
   }
 }
 
+static void uart_debug(void){
+  //Easy UART Debug interface
+    if (resChar = Serial.read())
+    {
+      switch (resChar)
+      {
+      //Reset saved station logins
+      case 'r':
+        resChar = 'n';
+        wifimanager.resetSettings();
+        wifimanager.autoConnect("Pixie Uhr");
+        break;
+      //Restart ESP
+      case 'p':
+        resChar = 'n';
+        ESP.restart();
+        break;
+      }
+    }
+  }
+
+/* Is handled in WifiManager
 static bool wifi_setup(void)
 {
   const int WIFI_TIMEOUT_SECS = 16;
@@ -339,4 +380,4 @@ static bool wifi_setup(void)
   }
   return wifi_available;
 }
-
+*/

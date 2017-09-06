@@ -307,7 +307,7 @@ void setup()
 
   //Setup WiFimanager+OTA
   wifimanager.setOtaUser(ota_user, ota_pass);
-  wifimanager.autoConnect("Pixie Uhr");
+  wifimanager.autoConnect("NixieClock");
 
   if (isConnected(50))
   {
